@@ -9,6 +9,7 @@
     width: 100%;
     margin-top: 7px;
     z-index: 1;
+    background-color: #f3f3f3;
 }
 
 .navbar-ul li {
@@ -34,7 +35,7 @@
 
 .navbar-ul .right {
     float: right;
-    padding-right: 10px;
+    padding-right: 15px;
 }
 
 .organization-name a {
