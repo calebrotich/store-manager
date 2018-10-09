@@ -1,0 +1,42 @@
+.navbar-ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0 10px 0 0;
+    overflow: hidden;
+    position: fixed;
+    background-color: white;
+    top: 0;
+    width: 100%;
+    margin-top: 7px;
+    z-index: 1;
+}
+
+.navbar-ul li {
+    float: left;
+}
+
+.navbar-ul li a {
+    display: block;
+    color: #f4511e;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 19px;
+}
+
+.navbar-ul li a:hover:not(.active) {
+    border-bottom: 2px solid #f4511e;
+}
+
+.navbar-ul .active {
+    border-bottom: 2px solid #f4511e;
+}
+
+.navbar-ul .right {
+    float: right;
+    padding-right: 10px;
+}
+
+.organization-name a {
+    font-size: 21px;
+}
