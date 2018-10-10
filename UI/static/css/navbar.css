@@ -1,3 +1,8 @@
+.navbar-container {
+    display: grid;
+    grid-template-columns: auto;
+}
+
 .navbar-ul {
     list-style-type: none;
     margin: 0;
@@ -25,7 +30,7 @@
     font-size: 19px;
 }
 
-.navbar-ul li a:hover:not(.active) {
+.navbar-ul li a:hover:not(.prof-pic) {
     border-bottom: 2px solid #f4511e;
 }
 
@@ -36,6 +41,17 @@
 .navbar-ul .right {
     float: right;
     padding-right: 15px;
+}
+
+.navbar-ul .right a img{
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.navbar-ul .right a:hover img{
+    cursor: pointer;
 }
 
 .organization-name a {
