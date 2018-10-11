@@ -29,6 +29,7 @@
   margin-right: 2.5%;
   margin-top: 10px;
   font-size: 18px;
+  border: 1px solid red;
 }
 
 .checkout-button:hover {
@@ -36,6 +37,7 @@
   padding: 18px;
   margin-right: 2.5%;
   margin-top: 10px;
+  border: 1px solid red;
 }
 
 input[type=number] {
