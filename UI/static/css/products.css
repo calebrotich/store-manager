@@ -10,9 +10,14 @@
     padding: 10px 10px 10px 10px;
 }
 
-.category-container div img {
-    width: 80px;
-    height: 80px;
+.category-container div .product-image {
+    width: 100px;
+    height: 120px;
+}
+
+.TVs div .product-image {
+    width: 150px;
+    height: 100px;
 }
 
 .category-title {
@@ -27,4 +32,9 @@
 .product-price {
     font-size: 18px;
     color: #f4511e;
+}
+
+button img {
+  width: 20px;
+  height: 20px;
 }
