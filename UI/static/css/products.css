@@ -38,3 +38,30 @@ button img {
   width: 20px;
   height: 20px;
 }
+
+.category-container div a {
+  text-decoration: none;
+  color: #f4511e;
+}
+
+.category-container div a:hover {
+  text-decoration: underline;
+  color: #f4511e;
+}
+
+/* SPECIFIC PRODUCT */
+.product-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  width: 90%;
+  margin: auto;
+}
+
+.product-container div h3 {
+  color: #f4511e;
+}
+
+.content-container h2 {
+  color: #f4511e;
+  margin-left: 5%;
+}
