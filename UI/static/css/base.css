@@ -1,58 +1,71 @@
-.navbar-container { 
-  grid-area: header; 
+.grid-container {
+  display: grid;
+  grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+  overflow-x: hidden;
+  /* grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto; */
 }
 
-.sidebar-container { 
-  grid-area: menu; 
+.navbar-container {
+  grid-area: 1/1/2/11;
 }
 
-.sidebar-container div {
-    height: 100%;
-    width: 20vw;
-    position: fixed;
-    z-index: 1;
-    background-color: #f2f2f2;
-    overflow-x: hidden;
-    padding-top: 20px;
-}
-
-.sidebar-container div a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    display: block;
-    color: #f4511e;
-    font-size: 15px;
-}
-
-.sidebar-container div a.active {
-    background-color: #f4511e;
-    color: white;
-}
-
-.sidebar-container div a:hover {
-    background-color: #f4511e;
-    color: white;
+.sidebar-container {
+  grid-area: 2/1/12/3;
 }
 
 .content-container {
-  grid-area: main; 
-  background-color: red;
+  grid-area: 2/3/12/11;
 }
 
-.footer-container {
-  grid-area: footer;
-}
-
-.grid-container {
-  display: grid;
-  grid-template-areas:
-    'header header header header header header'
-    'menu main main main main main'
-    'menu footer footer footer footer footer';
-}
 .grid-container > div {
-  background-color: rgba(255, 255, 255, 0.8);
-  text-align: center;
   padding: 20px 0;
-  font-size: 30px;
+}
+
+.sidebar-container div {
+  height: 100%;
+  width: 20%;
+  position: fixed;
+  background-color: #f2f2f2;
+  overflow-x: scroll;
+  padding-top: 20px;
+}
+
+.sidebar-container div a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  display: block;
+  color: #f4511e;
+  font-size: 15px;
+}
+
+.sidebar-container div a.active {
+  background-color: #f4511e;
+  color: white;
+}
+
+.sidebar-container div a:hover {
+  background-color: #f4511e;
+  color: white;
+}
+
+hr {
+  width: 95%;
+}
+
+button {
+  background-color: #f4511e;
+  color: white;
+  padding: 8px 12px;
+  border: 1px solid #f4511e;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #fff;
+  color: #f4511e;
+  padding: 8px 12px;
+  border: 1px solid #f4511e;
+  border-radius: 4px;
+  cursor: pointer;
 }
