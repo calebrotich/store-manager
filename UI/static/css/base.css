@@ -1,0 +1,74 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+  overflow-x: hidden;
+}
+
+.navbar-container {
+  grid-area: 1/1/2/11;
+}
+
+.sidebar-container {
+  grid-area: 2/1/12/3;
+}
+
+.content-container {
+  grid-area: 2/3/12/11;
+}
+
+.grid-container > div {
+  padding: 20px 0;
+}
+
+.sidebar-container div {
+  height: 100%;
+  width: 20%;
+  position: fixed;
+  background-color: #f2f2f2;
+  overflow-x: scroll;
+  padding-top: 20px;
+}
+
+.sidebar-container div a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  display: block;
+  color: #f4511e;
+  font-size: 15px;
+}
+
+.sidebar-container div a.active {
+  background-color: #f4511e;
+  color: white;
+}
+
+.sidebar-container div a:hover {
+  background-color: #f4511e;
+  color: white;
+}
+
+hr {
+  width: 95%;
+}
+
+button {
+  background-color: #f4511e;
+  color: white;
+  padding: 8px 12px;
+  border: 1px solid #f4511e;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #fff;
+  color: #f4511e;
+  padding: 8px 12px;
+  border: 1px solid #f4511e;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.sidebar-container div a {
+  font-size: 19px;
+}
