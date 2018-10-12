@@ -86,3 +86,8 @@
   width: 98%;
   margin: auto;
 }
+
+.manage-product-container h3 {
+  color: #f4511e;
+  text-align: center;
+}
