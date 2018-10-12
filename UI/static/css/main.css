@@ -1,0 +1,30 @@
+input[type=submit] {
+    background-color: #f4511e;
+    color: white;
+    padding: 12px 20px;
+    border: 1px solid #f4511e;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #fff;
+    color: #f4511e;
+    padding: 12px 20px;
+    border: 1px solid #f4511e;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto;
+}
+
+input[type=text], input[type=password], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
