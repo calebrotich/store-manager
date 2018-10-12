@@ -1,0 +1,48 @@
+.s-table {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 95%;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.s-table td, .s-table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.s-table tr:nth-child(even){background-color: #f2f2f2;}
+
+.s-table tr:hover {background-color: #ddd;}
+
+.s-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    color: #f4511e;
+}
+
+.checkout-button {
+  background-color: red;
+  float: right;
+  padding: 18px;
+  margin-right: 2.5%;
+  margin-top: 10px;
+  font-size: 18px;
+  border: 1px solid red;
+}
+
+.checkout-button:hover {
+  float: right;
+  padding: 18px;
+  margin-right: 2.5%;
+  margin-top: 10px;
+  border: 1px solid red;
+}
+
+input[type=number] {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 80%;
+}
