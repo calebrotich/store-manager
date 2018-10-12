@@ -67,10 +67,15 @@
   width: 90%;
   margin: auto;
   color: #f4511e;
-  /* border: 1px solid #f4511e; */
   margin-bottom: 30px;
 }
 
 .admin-profile-container div p {
   color: black;
+}
+
+/* ADD SALE ATTENDANT */
+.sale-attendant-container {
+  width: 80%;
+  margin: auto;
 }
