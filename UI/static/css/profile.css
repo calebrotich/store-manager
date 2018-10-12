@@ -1,0 +1,57 @@
+.profile-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-column-gap: 30px;
+  width: 90%;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.profile-container div {
+  background-color: #f2f2f2;
+  padding: 30px;
+}
+
+.profile-container div p{
+  color: #f4511e;
+  font-size: 25px;
+  text-align: center;
+}
+
+.profile-container div p{
+  text-align: center;
+}
+
+.account-rating {
+  width: 30%;
+  margin: auto;
+}
+
+.account-rating p {
+  text-align: center;
+  color: #f4511e;
+  font-size: 22px;
+}
+
+.account-rating h4 {
+  text-align: center;
+}
+
+.account-rating div {
+  margin-left: 27%;
+}
+
+.account-rating div span {
+  font-size: 28px;
+  text-align: center;
+}
+
+.account-rating .checked {
+  color: #f4511e;
+}
+
+.personal-information p {
+  font-size: 20px;
+  margin-left: 5%;
+}
