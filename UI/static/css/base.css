@@ -2,7 +2,6 @@
   display: grid;
   grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
   overflow-x: hidden;
-  /* grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto; */
 }
 
 .navbar-container {
@@ -68,4 +67,8 @@ button:hover {
   border: 1px solid #f4511e;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.sidebar-container div a {
+  font-size: 19px;
 }
