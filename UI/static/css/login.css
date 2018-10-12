@@ -1,0 +1,20 @@
+.login-div {
+    background-color: #f3f3f3;
+    width: 50vw;
+    margin: auto;
+    padding: 80px;
+    border-radius: 9px;
+}
+
+.grid-container {
+    margin-top: 80px;
+}
+
+.login-form div {
+    margin-top: 20px;
+}
+
+.login-form span {
+    color: #f4511e;
+    font-size: 24px;
+}

@@ -1,0 +1,81 @@
+.profile-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-column-gap: 30px;
+  width: 90%;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.profile-container div {
+  background-color: #f2f2f2;
+  padding: 30px;
+}
+
+.profile-container div p {
+  color: #f4511e;
+  font-size: 25px;
+  text-align: center;
+}
+
+.profile-container div a {
+  color: #f4511e;
+}
+
+.profile-container div p a {
+  text-decoration: none;
+  color: #f4511e;
+}
+
+.account-rating {
+  width: 30%;
+  margin: auto;
+}
+
+.account-rating p {
+  text-align: center;
+  color: #f4511e;
+  font-size: 22px;
+}
+
+.account-rating h4 {
+  text-align: center;
+}
+
+.account-rating div {
+  margin-left: 27%;
+}
+
+.account-rating div span {
+  font-size: 28px;
+  text-align: center;
+}
+
+.account-rating .checked {
+  color: #f4511e;
+}
+
+.personal-information p {
+  font-size: 20px;
+  margin-left: 5%;
+}
+
+/* ADMIN PROFILE */
+
+.admin-profile-container div {
+  width: 90%;
+  margin: auto;
+  color: #f4511e;
+  margin-bottom: 30px;
+}
+
+.admin-profile-container div p {
+  color: black;
+}
+
+/* ADD SALE ATTENDANT */
+.sale-attendant-container {
+  width: 80%;
+  margin: auto;
+}
