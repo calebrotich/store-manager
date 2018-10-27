@@ -1,0 +1,30 @@
+.category-container {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-column-gap: 10px;
+    grid-row-gap: 25px;
+    padding-left: 10px;
+}
+
+.category-container div {
+    padding: 10px 10px 10px 10px;
+}
+
+.category-container div img {
+    width: 80px;
+    height: 80px;
+}
+
+.category-title {
+    color: #f4511e;
+    margin-left: 2.5%;
+}
+
+.product-name {
+    color: #f4511e;
+}
+
+.product-price {
+    font-size: 18px;
+    color: #f4511e;
+}
