@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="widtd=device-widtd, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Cart | Store Manager</title>
     <link rel="stylesheet" href="../static/css/navbar.css">
@@ -22,7 +22,7 @@
                 </li>
                 <li class="right"><a href="../../index.html">Home</a></li>
             </ul>
-        </div>
+    </div>
         <div class="sidebar-container">
             <div>
                 <a href="products.html">Products</a>
@@ -34,20 +34,21 @@
         <div class="content-container">
           <div class="sale-attendant-container">
             <h3>Add a Store Attendant</h3>
-            <form class="" action="index.html" method="post">
-              <label for="">Full Name</label>
-              <input type="text" name="" value="">
+            <div id="message-box">
+            </div><br>
+            <form>
+                <label for="signup-email">E-mail address</label>
+                <input type="email" id="signup-email" value="">
 
-              <label for="">E-mail address</label>
-              <input type="email" name="" value="">
+                <label for="signup-password">Password</label>
+                <input type="text" id="signup-password" value="">
 
-              <label for="">ID Number</label>
-              <input type="text" name="" value="">
-
-              <input type="button" name="" value="Add new attendant">
+                <input type="button" id="signup-submit" value="Add new attendant">
             </form>
           </div>
         </div>
     </div>
+    <script src="../static/js/signup.js"></script>
+
 </body>
 </html>
