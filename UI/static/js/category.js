@@ -1,4 +1,5 @@
 // Consume the categories endpoint from https://store-manager-api-v2.herokuapp.com/api/v2/category
+'use strict';
 const categoryAPIURI = "https://store-manager-api-v2.herokuapp.com/api/v2/category";
 const categoryButton = document.querySelector("#submit-category");
 const CategoryMessageBox = document.querySelector("#category-message");
