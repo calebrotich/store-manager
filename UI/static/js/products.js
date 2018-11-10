@@ -1,35 +1,14 @@
 // Consume the products endpoint from https://store-manager-api-v2.herokuapp.com/api/v2/
 'use strict';
 const productsAPIURI = "https://store-manager-api-v2.herokuapp.com/api/v2/";
-const saveProduct = document.querySelector("#save-product");
-const productsMessageBox = document.querySelector("#products-message");
+const productsContainer = document.querySelector("#products-container");
+const userToken = localStorage.userToken;
 
-saveProduct.addEventListener('click', (event) => {
-    productsMessageBox.innerHTML = "";
-    saveProduct.disabled = true;
-    saveProduct.value = "Creating product...";
-    const productName = document.querySelector("#add-product-name").value;
-    const productPrice = document.querySelector("#add-product-price").value;
-    const productInventory = document.querySelector("#add-product-inventory").value;
-    const productMinQuantity = document.querySelector("#add-product-minquantity").value;
-    const productCategory = document.querySelector("#categories-select").value;
-
-    event.preventDefault();
-
-    let productData = {
-        "product_name": productName,
-        "product_price": Number(productPrice),
-        "inventory": Number(productInventory),
-        "min_quantity": Number(productMinQuantity),
-        "category": Number(productCategory)
-    };
-
-    // Send POST request to products endpoint
+function fetchProducts() {
+    // Send GET request to products endpoint
     fetch(`${productsAPIURI}products`, {
-        method: 'POST',
-        body: JSON.stringify(productData),
+        method: 'GET',
         headers: {
-            'Content-Type': 'application/json',
             'Authorization': userToken
         }
     })
@@ -38,27 +17,55 @@ saveProduct.addEventListener('click', (event) => {
             return response.json()
         }
         else{
-            productsMessageBox.innerHTML = response;
+            productsContainer.innerHTML = response;
         }
     })
     .then(function(json_response) {
         let message = json_response.message;
-        if(message === "Product added successfully") {
-            productsMessageBox.style.color = "green";
-            productsMessageBox.innerHTML = message;
-            saveProduct.value = "Add another product";
-            saveProduct.disabled = false;
+        if(message === "Successfully fetched all the products") {
+            let products = json_response.products;
+            products.forEach(product => {
+                let div = document.createElement("div");
+                div.innerHTML = `
+                <div>
+                    <a href="product.html?product_id=${product.product_id}">
+                        <img class="product-image" src="../images/products_pictures/noimage.png" alt="Phone">
+                    </a>
+                    <br>
+                    <span class="product-name">
+                        <a href="product.html?product_id=${product.product_id}">${product.product_name}</a>
+                    </span>
+                    <br>
+                    <span class="product-description">
+                        Stock amount: ${product.inventory} <br />
+                        Minimum quantity: ${product.min_quantity} <br />
+                        Product Category: ${product.category}
+                    </span>
+                    <br>
+                    <span class="product-price">Ksh. ${product.product_price}</span>
+                    <br>
+                    <button type="button" name="button"> Add to cart</button>
+                </div>`
+              productsContainer.appendChild(div);
+            });
+        }
+        else if (message === "There are no products in the store yet") {
+            let div = document.createElement("div");
+            div.innerHTML = message;
+            productsContainer.appendChild(div);
+        }
+        else if (json_response.Message === "You need to login" ||
+                 json_response.Message === "The token is either expired or wrong") {
+            window.location.replace("../../index.html");
         }
         else {
-            productsMessageBox.style.color = "red";
-            productsMessageBox.innerHTML = message;
-            saveProduct.value = "Add product";
-            saveProduct.disabled = false;
+            productsContainer.innerHTML = message;
         }
     })
     .catch(function(err) {
         console.log(err);
-        productsMessageBox.innerHTML = err;
-        saveProduct.disabled = false;
+        productsContainer.innerHTML = err;
     });
-});
+}
+
+fetchProducts();
