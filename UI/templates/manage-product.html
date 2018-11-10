@@ -36,7 +36,7 @@
           <div class="manage-product-container">
             <div class="">
               <h3>Add a new product</h3>
-              <form class="" action="index.html" method="post">
+              <form>
                 <label for="">Product Name</label>
                 <input type="text" name="" value="">
 
@@ -49,11 +49,9 @@
                   <option value="">Phones</option>
                   <option value="">TVs</option>
                 </select>
-
                 <input type="button" name="" value="Add Product">
               </form>
             </div>
-
             <div class="">
               <h3>Available Products</h3>
               <table class="s-table">
@@ -108,20 +106,22 @@
                 </tr>
               </table>
             </div>
-
           </div>
           <hr>
           <div class="manage-product-container">
             <h3>Introduce a new Product category</h3>
             <br>
-            <form class="" action="index.html" method="post">
+            <form>
+                <div class="message-box" id="category-message">
+                </div>
+                <br>
               <label for="">Category name</label>
-              <input type="text" name="" value="">
-
-              <input type="button" name="" value="Add category">
+              <input type="text" id="add-category-name" value="">
+              <input type="button" id="submit-category"  value="Add category">
             </form>
           </div>
         </div>
     </div>
+    <script src="../static/js/category.js"></script>
 </body>
 </html>
