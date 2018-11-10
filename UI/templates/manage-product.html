@@ -36,18 +36,24 @@
           <div class="manage-product-container">
             <div class="">
               <h3>Add a new product</h3>
+              <div class="message-box" id="products-message">
+
+              </div>
+              <br>
               <form>
-                <label for="">Product Name</label>
-                <input type="text" name="" value="">
-
-                <label for="">Product Price</label>
-                <input type="email" name="" value="">
-
-                <label for="">Categorize</label>
+                <label for="add-product-name">Product Name</label>
+                <input type="text" id="add-product-name" value="">
+                <label for="add-product-price">Product Price</label>
+                <input type="number" id="add-product-price" value="">
+                <label for="add-product-inventory">Product Inventory</label>
+                <input type="number" id="add-product-inventory" value="0">
+                <label for="add-product-minquantity">Product min quantity</label>
+                <input type="number" id="add-product-minquantity" value="0">                
+                <label for="categories-select">Categorize</label>
                 <select id="categories-select">
                   <!-- categories included dynamically -->
                 </select>
-                <input type="button" name="" value="Add Product">
+                <input type="button" id="save-product" value="Add Product">
               </form>
             </div>
             <div class="">
@@ -121,5 +127,6 @@
         </div>
     </div>
     <script src="../static/js/category.js"></script>
+    <script src="../static/js/products.js"></script>
 </body>
 </html>
