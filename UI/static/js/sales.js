@@ -1,6 +1,6 @@
 // Consume the products endpoint from https://store-manager-api-v2.herokuapp.com/api/v2/saleorder
 'use strict';
-const salesAPIURI = "https://store-manager-api-v2.herokuapp.com/api/v2/saleorder";
+const salesAPIURI = "http://127.0.0.1:5000/api/v2/saleorder";
 const makeSale = document.querySelector("#checkout-button");
 const salesMessageBox = document.querySelector("#sales-message");
 const salesTable = document.querySelector("#sales-table");
@@ -63,6 +63,10 @@ makeSale.addEventListener('click', (event) => {
 function populateSalesTable() {
     if (localStorage.sales != undefined) {
         let salesData = JSON.parse(localStorage.sales);
+        if (localStorage.sales == `{"items":[]}`) {
+            salesMessageBox.innerHTML = "Nothing in the cart";
+            return;
+        }
     let counter = 1;
     let amount = 0;
     while (salesTable.firstChild) {
@@ -74,6 +78,7 @@ function populateSalesTable() {
         <th>Product</th>
         <th>Price</th>
         <th>Quantity</th>
+        <th>Action</th>
     `;
     salesTable.appendChild(tr);
     salesData.items.forEach(sale => {
@@ -84,6 +89,11 @@ function populateSalesTable() {
             <td>${sale.name}</td>
             <td>Ksh. ${sale.price}</td>
             <td><input type="number" min-value=1 onchange="updateQuantity(this.value, ${sale.product})" id="product-quantity-${sale.product}" min="0" value="${sale.quantity}"></td>
+            <td>
+                <button type="button" id="delete-sale-${sale.product}" onclick="removeFromCart(${sale.product})">
+                    <span class="fa fa-trash"></span>
+                </button>
+            </td>
         `;
         amount+=(sale.price * sale.quantity);
         salesTable.appendChild(tr);
@@ -112,6 +122,19 @@ function updateQuantity(quantity, product) {
     localStorage.sales = JSON.stringify(salesData);
     console.log(JSON.stringify(salesData));
     populateSalesTable();
+}
+
+function removeFromCart(product) {
+    let salesData = JSON.parse(localStorage.sales);
+    let i = 0;
+    salesData.items.forEach(sale => {
+        if (sale.product == product) {
+            salesData.items.splice(i, 1);
+        }
+        i++;
+    });
+    localStorage.sales = JSON.stringify(salesData);
+    window.location.replace("cart.html");
 }
 
 populateSalesTable();
