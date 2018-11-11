@@ -100,7 +100,7 @@ function fetchProducts() {
                         <button type="button" id="edit-${product.product_id}">
                             <span class="fa fa-pencil"></span>
                         </button>
-                        <button type="button" id="delete-${product.product_id}">
+                        <button type="button" onclick="deleteProduct(${product.product_id})" id="delete-${product.product_id}">
                             <span class="fa fa-trash"></span>
                         </button>
                     </td>
@@ -126,6 +126,41 @@ function fetchProducts() {
     .catch(function(err) {
         console.log(err);
         CategoryMessageBox.innerHTML = err;
+    });
+}
+
+function deleteProduct(product) {
+    let deleteProductURI = `${productsAPIURI}product/${Number(product)}`;
+    fetch(deleteProductURI, {
+        method: 'DELETE',
+        headers: {
+            'Authorization': userToken
+        }
+    })
+    .then((response)=> {
+        if(response.status < 500){
+            return response.json()
+        }
+        else{
+            productsMessageBox.innerHTML = response;
+        }
+    })
+    .then(function(json_response) {
+        let message = json_response.message;
+        if(message === "Product deleted successfully") {
+            window.location.replace("manage-product.html")
+        }
+        else if (json_response.Message === "You need to login" ||
+                 json_response.Message === "The token is either expired or wrong") {
+            window.location.replace("../../index.html");
+        }
+        else {
+            productsMessageBox.innerHTML = message;
+        }
+    })
+    .catch(function(err) {
+        console.log(err);
+        productsMessageBox.innerHTML = err;
     });
 }
 
