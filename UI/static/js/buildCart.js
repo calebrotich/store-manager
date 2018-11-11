@@ -11,6 +11,15 @@ if (localStorage.sales != undefined || localStorage.sales != null) {
 }
 
 function buildCart(product, name, price) {
+    if (localStorage.sales != undefined) {
+        let salesData = JSON.parse(localStorage.sales);
+        salesData.items.forEach(sale => {
+            if (sale.product == product) {
+                document.querySelector("#products-message").innerHTML = "Product added already";
+                return;
+            }
+        });
+    }
     var product = Number(product);
     let productName = name;
     let productPrice = Number(price);
