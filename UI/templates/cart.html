@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="widtd=device-widtd, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Cart | Store Manager</title>
     <link rel="stylesheet" href="../static/css/navbar.css">
@@ -30,34 +30,16 @@
             </div>
         </div>
         <div class="content-container">
-          <table class="s-table">
-            <tr>
-              <th>S/N</th>
-              <th>Product</th>
-              <th>Price</th>
-              <th>Quantity</th>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>Phone Brand 1</td>
-              <td>Ksh. 55,000</td>
-              <td><input type="number" name="" min="0" value="1"></td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>TV Brand 2</td>
-              <td>Ksh. 32,000</td>
-              <td><input type="number" name="" min="0" value="1"></td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>TV Brand 4</td>
-              <td>Ksh. 26,000</td>
-              <td><input type="number" name="" min="0" value="1"></td>
-            </tr>
+            <br>
+            <div class="message-box" id="sales-message">
+
+            </div>
+          <table class="s-table" id="sales-table">
+              <!-- cart created dynamically -->
           </table>
-          <button type="button" class="checkout-button" name="button">CHECKOUT KSH. 113, 000</button>
+          <button type="button" class="checkout-button" id="checkout-button">CHECKOUT</button>
         </div>
     </div>
+    <script src="../static/js/sales.js"></script>
 </body>
 </html>
