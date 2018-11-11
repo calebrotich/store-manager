@@ -72,3 +72,7 @@ button:hover {
 .sidebar-container div a {
   font-size: 19px;
 }
+
+#checkout-button {
+  display: none;
+}
