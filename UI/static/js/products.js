@@ -1,6 +1,6 @@
 // Consume the products endpoint from https://store-manager-api-v2.herokuapp.com/api/v2/
 'use strict';
-const productsAPIURI = "https://store-manager-api-v2.herokuapp.com/api/v2/";
+const productsAPIURI = "http://127.0.0.1:5000/api/v2/";
 const productsContainer = document.querySelector("#products-container");
 const userToken = localStorage.userToken;
 
@@ -44,7 +44,7 @@ function fetchProducts() {
                     <br>
                     <span class="product-price">Ksh. ${product.product_price}</span>
                     <br>
-                    <button type="button" name="button"> Add to cart</button>
+                    <button type="button" onClick="buildCart(${product.product_id}, '${product.product_name}', ${product.product_price})"> Add to cart</button>
                 </div>`
               productsContainer.appendChild(div);
             });
