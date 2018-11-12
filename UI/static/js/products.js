@@ -1,6 +1,6 @@
 // Consume the products endpoint from https://store-manager-api-v2.herokuapp.com/api/v2/
 'use strict';
-const productsAPIURI = "http://127.0.0.1:5000/api/v2/";
+const productsAPIURI = "https://store-manager-api-v2.herokuapp.com/api/v2/";
 const productsContainer = document.querySelector("#products-container");
 const userToken = localStorage.userToken;
 
