@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login | Store Manager</title>
+    <link rel="stylesheet" href="UI/static/css/navbar.css">
+    <link rel="stylesheet" href="UI/static/css/login.css">
+    <link rel="stylesheet" href="UI/static/css/main.css">
+    <link rel="icon" href="UI/images/icons/download.jpeg">
+
+</head>
+<body>
+    <!-- NAVBAR -->
+    <div class="navbar-div">
+        <ul class="navbar-ul">
+            <li class="right"><a class="active" href="#login">Login</a></li>
+        </ul>
+    </div>
+
+    <!-- LOGIN FORM -->
+    <div class="login-div grid-container">
+        <form class="login-form">
+            <span>Welcome back!</span>
+            <div id="message-box">
+                sampleadmin: "admin@gmail.com"
+                pass: "Password12#"
+            </div>
+            <div>
+                <input type="text" id="login-email" placeholder="E-mail" required="required">
+            </div>
+            <div>
+                <input type="password" id="login-password" placeholder="Password" required="required">
+            </div>
+            <h5>Forgot password? Click <a href="">here</a></h5>
+            <div>
+                <input type="submit" id="submit-login" value="Log in">
+            </div>
+        </form>
+    </div>
+    <script src="UI/static/js/login.js"></script>
+
+</body>
+</html>

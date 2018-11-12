@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="../static/js/checkRole.js"></script>
+    <script>redirectIfNotAdmin()</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cart | Store Manager</title>
+    <link rel="stylesheet" href="../static/css/navbar.css">
+    <link rel="stylesheet" href="../static/css/base.css">
+    <link rel="stylesheet" href="../static/css/tables.css">
+    <link rel="stylesheet" href="../static/css/profile.css">
+    <link rel="stylesheet" href="../static/css/form.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="../images/icons/download.jpeg">
+</head>
+<body>
+    <div class="grid-container">
+        <div class="navbar-container">
+            <ul class="navbar-ul">
+                <li class="organization-name"><a href="../../index.html">Store Manager</a></li>
+                <li class="right">
+                    <a href="profile.html" class="prof-pic"><img src="../images/profile_pictures/images.png" alt=""></a>
+                </li>
+                <li class="right"><a href="../../index.html">Home</a></li>
+            </ul>
+        </div>
+        <div class="sidebar-container">
+            <div>
+                <a href="products.html">Products</a>
+                <a href="cart.html">Cart</a>
+                <a href="admin-profile.html" class="active">Profile</a>
+            </div>
+        </div>
+        <div class="content-container">
+          <div class="manage-product-container">
+            <div class="">
+              <h3>Add a new product</h3>
+              <div class="message-box" id="products-message">
+
+              </div>
+              <br>
+              <form>
+                <label for="add-product-name">Product Name</label>
+                <input type="text" id="add-product-name" value="">
+                <label for="add-product-price">Product Price</label>
+                <input type="number" id="add-product-price" value="">
+                <label for="add-product-inventory">Product Inventory</label>
+                <input type="number" id="add-product-inventory" value="0">
+                <label for="add-product-minquantity">Product min quantity</label>
+                <input type="number" id="add-product-minquantity" value="0">                
+                <label for="categories-select">Categorize</label>
+                <select id="categories-select">
+                  <!-- categories included dynamically -->
+                </select>
+                <input type="button" id="save-product" value="Add Product">
+              </form>
+            </div>
+            <div class="">
+              <h3>Available Products</h3>
+              <table class="s-table" id="products-table">
+                <div class="message-box" id="list-products-message">
+                  Edit price, Inventory and min quantity directly and click the save icon
+                </div>
+                <tr>
+                  <th>S/N</th>
+                  <th>Product</th>
+                  <th>Price</th>
+                  <th>Category</th>
+                  <th>Inventory</th>
+                  <th>Min Quantity</th>
+                  <th>Actions</th>
+                </tr>
+                <!-- product's rows added dynamically -->
+              </table>
+            </div>
+          </div>
+          <hr>
+          <div class="manage-product-container">
+            <h3>Introduce a new Product category</h3>
+            <br>
+            <form>
+                <div class="message-box" id="category-message">
+                </div>
+                <br>
+              <label for="">Category name</label>
+              <input type="text" id="add-category-name" value="">
+              <input type="button" id="submit-category"  value="Add category">
+            </form>
+          </div>
+        </div>
+    </div>
+    <script src="../static/js/category.js"></script>
+    <script src="../static/js/manage-products.js"></script>
+</body>
+</html>

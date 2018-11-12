@@ -1,0 +1,26 @@
+input[type=text], select, input[type=email] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit], input[type=button] {
+    background-color: #f4511e;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: 1px solid #f4511e;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+input[type=submit]:hover, input[type=button]:hover {
+    background-color: white;
+    color: #f4511e;
+    border: 1px solid #f4511e;
+}

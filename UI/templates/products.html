@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="../static/js/checkRole.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Products | Store Manager</title>
+    <link rel="stylesheet" href="../static/css/navbar.css">
+    <link rel="stylesheet" href="../static/css/base.css">
+    <link rel="stylesheet" href="../static/css/products.css">
+    <link rel="icon" href="../images/icons/download.jpeg">
+</head>
+<body>
+    <div class="grid-container">
+        <div class="navbar-container">
+            <ul class="navbar-ul">
+                <li class="organization-name"><a href="../../index.html">Store Manager</a></li>
+                <li class="right">
+                    <a href="admin-profile.html" class="prof-pic"><img src="../images/profile_pictures/images.png" alt=""></a>
+                </li>
+                <li class="right"><a href="#" id="logout-button">Logout</a></li>
+            </ul>
+        </div>
+        <div class="sidebar-container">
+            <div>
+                <a href="" class="active">Products</a>
+                <a href="cart.html">Cart</a>
+                <a href="admin-profile.html">Profile</a>
+            </div>
+        </div>
+        <div class="content-container">
+            <div id="products-message">
+
+            </div>
+            <div class="category-container" id="products-container">
+              <!-- Products loaded dynamically -->
+            </div>
+        </div>
+    </div>
+    <script src="../static/js/products.js"></script>
+    <script src="../static/js/buildCart.js"></script>
+    <script src="../static/js/logout.js"></script>
+
+</body>
+</html>

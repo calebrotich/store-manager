@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="../static/js/checkRole.js"></script>
+    <script>redirectIfNotAdmin()</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sale Records | Store Manager</title>
+    <link rel="stylesheet" href="../static/css/navbar.css">
+    <link rel="stylesheet" href="../static/css/base.css">
+    <link rel="stylesheet" href="../static/css/products.css">
+    <link rel="stylesheet" href="../static/css/records.css">
+    <link rel="stylesheet" href="../static/css/tables.css">
+    <link rel="icon" href="../images/icons/download.jpeg">
+</head>
+<body>
+    <div class="grid-container">
+        <div class="navbar-container">
+            <ul class="navbar-ul">
+                <li class="organization-name"><a href="../../index.html">Store Manager</a></li>
+                <li class="right">
+                    <a href="profile.html" class="prof-pic"><img src="../images/profile_pictures/images.png" alt=""></a>
+                </li>
+                <li class="right"><a href="../../index.html">Home</a></li>
+            </ul>
+        </div>
+        <div class="sidebar-container">
+            <div>
+                <a href="products.html">Products</a>
+                <a href="cart.html">Cart</a>
+                <a href="admin-profile.html">Profile</a>
+                <a href="#" class="active">Sale Records</a>
+
+            </div>
+        </div>
+        <div class="content-container">
+          <div class="message-box" id="sales-message"></div>
+          <div class="records-container" id="sales-records-container">
+            <!-- sale orders added dynamically -->
+          </div>
+ 
+        </div>
+    </div>
+    <script src="../static/js/fetchSales.js"></script>
+</body>
+</html>
