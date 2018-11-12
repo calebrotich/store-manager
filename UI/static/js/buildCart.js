@@ -1,4 +1,4 @@
-// Consume the sales endpoint from https://store-manager-api-v2.herokuapp.com/api/v2/
+// Creat an object of products before making a sale
 let sales = {};
 let items = [];
 
