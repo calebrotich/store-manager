@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="../static/js/checkRole.js"></script>
+    <script>redirectIfNotAdmin()</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="widtd=device-widtd, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -25,16 +27,15 @@
         <div class="sidebar-container">
             <div>
                 <a href="products.html">Products</a>
-                <a href="cart.html">My cart</a>
-                <a href="sale-records.html">Sale records</a>
-                <a href="admin-profile.html" class="active">Dashboard</a>
+                <a href="cart.html">Cart</a>
+                <a href="admin-profile.html" class="active">Profile</a>
             </div>
         </div>
         <div class="content-container">
           <div class="admin-profile-container">
             <div class="sale-attendants">
               <h3>Sale Attendants</h3>
-              <p>30 Sale attendants registered</p>
+              <p>Sale attendants</p>
               <a href="sale-attendant.html">Add sale attendant</a>
             </div>
             <hr>

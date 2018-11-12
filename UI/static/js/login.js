@@ -40,6 +40,7 @@ login_button.addEventListener('click', (event) => {
         if(message === "Login successful") {
             // Store user_token in localStorage
             localStorage.userToken = json_response.token;
+            localStorage.role = json_response.role;
             // Redirect to orders page
             window.location.replace("UI/templates/products.html");
 
