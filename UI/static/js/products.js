@@ -1,6 +1,6 @@
 // Consume the products endpoint from https://store-manager-api-v2.herokuapp.com/api/v2/
 'use strict';
-const productsAPIURI = "https://store-manager-api-v2.herokuapp.com/api/v2/";
+const productsAPIURI = "http://127.0.0.1:5000/api/v2/";
 const productsContainer = document.querySelector("#products-container");
 const userToken = localStorage.userToken;
 
@@ -22,6 +22,7 @@ function fetchProducts() {
     })
     .then(function(json_response) {
         let message = json_response.message;
+        let Message = json_response.Message;
         if(message === "Successfully fetched all the products") {
             let products = json_response.products;
             products.forEach(product => {
@@ -54,8 +55,9 @@ function fetchProducts() {
             div.innerHTML = message;
             productsContainer.appendChild(div);
         }
-        else if (json_response.Message === "You need to login" ||
-                 json_response.Message === "The token is either expired or wrong") {
+        else if (Message === "You need to login" ||
+                 Message === "The token is either expired or wrong" ||
+                 Message === "Kindly login again") {
             window.location.replace("../../index.html");
         }
         else {
