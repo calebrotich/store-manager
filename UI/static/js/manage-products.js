@@ -92,13 +92,13 @@ function fetchProducts() {
                 <tr>
                     <td>${counter}</td>
                     <td>${product.product_name}</td>
-                    <td>${product.product_price}</td>
+                    <td contenteditable="true" id="price-${product.product_id}">${product.product_price}</td>
                     <td>${product.category}</td>
-                    <td>${product.inventory}</td>
-                    <td>${product.min_quantity}</td>
+                    <td contenteditable="true" id="inventory-${product.product_id}">${product.inventory}</td>
+                    <td contenteditable="true" id="minquantity-${product.product_id}">${product.min_quantity}</td>
                     <td>
-                        <button type="button" id="edit-${product.product_id}">
-                            <span class="fa fa-pencil"></span>
+                        <button type="button" onclick="editProduct(${product.product_id}, ${product.category})" id="edit-${product.product_id}">
+                            <span class="fa fa-save"></span>
                         </button>
                         <button type="button" onclick="deleteProduct(${product.product_id})" id="delete-${product.product_id}">
                             <span class="fa fa-trash"></span>
@@ -120,12 +120,12 @@ function fetchProducts() {
             window.location.replace("../../index.html");
         }
         else {
-            CategoryMessageBox.innerHTML = message;
+            productsMessageBox.innerHTML = message;
         }
     })
     .catch(function(err) {
         console.log(err);
-        CategoryMessageBox.innerHTML = err;
+        productsMessageBox.innerHTML = err;
     });
 }
 
@@ -149,6 +149,54 @@ function deleteProduct(product) {
         let message = json_response.message;
         if(message === "Product deleted successfully") {
             window.location.replace("manage-product.html")
+        }
+        else if (json_response.Message === "You need to login" ||
+                 json_response.Message === "The token is either expired or wrong") {
+            window.location.replace("../../index.html");
+        }
+        else {
+            productsMessageBox.innerHTML = message;
+        }
+    })
+    .catch(function(err) {
+        console.log(err);
+        productsMessageBox.innerHTML = err;
+    });
+}
+
+function editProduct(product, category) {
+    // Send PUT request to products endpoint
+    let productPrice = document.querySelector(`#price-${product}`).innerHTML;
+    let productInventory = document.querySelector(`#inventory-${product}`).innerHTML;
+    let productMinQuantity = document.querySelector(`#minquantity-${product}`).innerHTML;
+    let productData = {
+        "product_price": Number(productPrice),
+        "inventory": Number(productInventory),
+        "min_quantity": Number(productMinQuantity),
+        "category": Number(category)
+    };
+
+    // Send POST request to products endpoint
+    fetch(`${productsAPIURI}product/${Number(product)}`, {
+        method: 'PUT',
+        body: JSON.stringify(productData),
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': userToken
+        }
+    })
+    .then((response)=> {
+        if(response.status < 500){
+            return response.json()
+        }
+        else{
+            productsMessageBox.innerHTML = response;
+        }
+    })
+    .then(function(json_response) {
+        let message = json_response.message;
+        if(message === "Product updated successfully") {
+            window.location.replace("manage-product.html");
         }
         else if (json_response.Message === "You need to login" ||
                  json_response.Message === "The token is either expired or wrong") {
